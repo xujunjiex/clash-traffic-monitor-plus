@@ -56,6 +56,16 @@
                 <label for="end">结束</label>
                 <input id="end" type="datetime-local" />
               </div>
+              <div class="toolbar-field">
+                <label for="granularity">粒度</label>
+                <select id="granularity">
+                  <option value="auto">自动</option>
+                  <option value="60000">1 分钟</option>
+                  <option value="300000">5 分钟</option>
+                  <option value="3600000">1 小时</option>
+                  <option value="86400000">1 天</option>
+                </select>
+              </div>
             </div>
             <button id="settingsBtn" class="toolbar-action ghost" type="button">设置</button>
             <button id="autoSwitchBtn" class="toolbar-action ghost" type="button">自动切换</button>

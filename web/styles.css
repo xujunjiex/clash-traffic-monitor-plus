@@ -1783,3 +1783,13 @@ th {
     scroll-behavior: auto !important;
   }
 }
+
+/* ===== 走势图点击联动筛选（本地增强） ===== */
+#trendCanvas { cursor: pointer; }
+.toolbar-action.trend-filter-badge {
+  background: #5f46ff;
+  border: 1px solid #5f46ff;
+  color: #fff;
+  font-weight: 600;
+}
+.toolbar-action.trend-filter-badge:hover { opacity: 0.85; }

@@ -14,3 +14,7 @@ __debug*
 CLAUDE.md
 release/
 vendor/
+
+# 构建产物
+*.exe
+patched/
