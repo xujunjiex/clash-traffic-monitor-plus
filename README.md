@@ -1,4 +1,6 @@
-# Traffic Monitor
+# Traffic Monitor Plus
+
+> **Plus 版**：基于上游 [zhf883680/clash-traffic-monitor](https://github.com/zhf883680/clash-traffic-monitor) 的增强 fork，新增**走势图点击联动筛选**等交互增强（见下方「本 Fork 增强」）。
 
 `Traffic Monitor` 是一个独立运行的 Clash 流量监控服务。
 
@@ -30,6 +32,7 @@
 </p>
 
 <p align="center">
+  <a href="#本-fork-增强">本 Fork 增强</a> ·
   <a href="#页面预览">页面预览</a> ·
   <a href="#功能特性">功能特性</a> ·
   <a href="#项目现状">项目现状</a> ·
@@ -37,6 +40,24 @@
   <a href="#常用配置">常用配置</a> ·
   <a href="#项目定位">项目定位</a>
 </p>
+
+## 本 Fork 增强
+
+相比上游，Plus 版新增/改进（+204/-31 行，纯前端改动，详见 [FORK_NOTES.md](./FORK_NOTES.md)）：
+
+- 🖱️ **走势图点击联动筛选**：点击趋势图上某个小时柱，主表/副表立即过滤到该时段的流量明细；点击图表空白处一键还原
+- 🏷️ **过滤徽章**：筛选生效时显示时段徽章，点徽章随时清除过滤，状态一目了然
+- ⚡ **局部刷新**：联动筛选只重载表格数据（`loadTablesOnly`），不整页刷新，交互无闪断
+- 💾 **状态记忆**：时间范围 / 粒度 / 汇总模式选择写入 localStorage，重开页面保持上次视角（`loadStoredGranularity` / `effectiveRange`）
+- 🎯 **悬停重绘修正**：趋势图 tooltip 与选中高亮的重绘时序修正，不再出现残影
+
+改动文件：`web/app.js`、`web/index.html`、`web/styles.css`；`patch.py` 为补丁参考脚本。
+
+**获取本版本**：上游 Releases 不含这些增强，需自行构建：
+
+```bash
+go build -o traffic-monitor-plus.exe .
+```
 
 ## 页面预览
 
